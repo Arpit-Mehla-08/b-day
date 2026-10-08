@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="For My Bachi">
+    <meta property="og:description" content="An interactive journey through the stars.">
+    <meta property="og:image" content="C:\Users\ramn6\Desktop\theft\project\Gemini_Generated_Image_u1vun6u1vun6u1vu.png">
+    <meta property="og:url" content="https://parth79-pixel.github.io/the-galaxy-project/">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>For My Alien Neha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+    <audio id="music" loop preload="auto">
+        <source src="Malang Sajna_320(PagaiWorld.com).mp3" type="audio/mpeg">
+    </audio>
+    
+    <canvas id="starfield"></canvas>
+
+    <div id="password-modal">
+        <div class="absolute w-64 h-64 bg-rose-600/20 blur-[100px] rounded-full"></div>
+        <div class="glass p-8 md:p-10 w-full max-w-sm text-center relative z-10">
+            <div class="text-5xl mb-6 animate-[pulse_1.5s_infinite] drop-shadow-[0_0_15px_rgba(225,29,72,0.6)]">🔒</div>
+            <h2 class="text-rose-300 font-bold tracking-[0.3em] uppercase text-[10px] mb-2">Galaxy Secured</h2>
+            <p class="text-white/40 text-[11px] mb-8 font-light italic animate-pulse">"The code is day when your parents dared to create a MIRACLE"</p>
+            <div class="relative group mb-6">
+                <input type="password" id="code-input" placeholder="DDMM" class="w-full py-4 px-6 rounded-2xl text-center text-xl tracking-[0.5em] shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
+            </div>
+            <button onclick="checkPassword()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 to-rose-500 font-bold glow-btn uppercase text-[10px] tracking-[0.4em]">Enter Our Universe❤️</button>
+            <p id="error-msg" class="text-rose-500 text-[10px] mt-4 opacity-0 font-medium uppercase tracking-widest">That's not the day, Neha. Try again.</p>
+        </div>
+    </div>
+
+    <div id="loader">
+        <div class="text-6xl mb-4 animate-bounce">💖</div>
+        <div class="w-48 h-1 bg-gray-900 rounded-full overflow-hidden">
+            <div id="progress" class="h-full bg-rose-600 w-0"></div>
+        </div>
+        <p id="loading-text" class="mt-4 text-rose-400 text-[10px] tracking-[0.4em] uppercase text-center px-4 min-h-[40px]">Searching the galaxy for the one who made me simle....</p>
+    </div>
+
+    <div id="stage1" class="stage">
+        <div class="text-8xl md:text-9xl mb-8 cursor-pointer hover:scale-110" onclick="nextStage(1)">🎁</div>
+        <h2 class="text-rose-300 font-bold tracking-widest uppercase text-xs">Tap to begin, Neha (Alien)</h2>
+    </div>
+
+    <div id="stage2" class="stage text-center">
+        <div class="glass p-8 md:p-12 shadow-2xl stage-card">
+            <h1 class="font-romance text-5xl md:text-7xl text-rose-400 mb-4">Happy Birthday Nehaaaa!!</h1>
+            <p class="text-rose-100/70 italic text-sm md:text-base mb-8">"In an ever-changing universe, you’re the only thing that might stay constant. There are billions of stars out there, but for me, yours is the only one that truly lights up my world. I’m so lucky to have you by my side."</p>
+            <button onclick="nextStage(2)" class="px-10 py-3 rounded-full bg-rose-600 font-bold glow-btn uppercase text-xs tracking-widest">Open your Memories ➔</button>
+        </div>
+    </div>
+
+    <div id="stage3" class="stage">
+        <div class="glass p-8 rounded-[40px] w-full stage-card">
+            <h3 class="text-rose-400 font-bold uppercase text-xs tracking-widest mb-6">Our Journey So Far</h3>
+            <div class="timeline-item">
+                <p class="text-[10px] text-rose-300/60 uppercase">The Beginning</p>
+                <p class="text-xs md:text-sm font-medium">Two school students know each other by name but, never talked 😂 ( Han for sure i can't forget that scooty pr mmy k sath tution jaati ladkii vo bhi tripling ke k😭😂 ). The day we first talked on snapchat randomly and everything changed. Just two strangers.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="text-[10px] text-rose-300/60 uppercase">The Spark</p>
+                <p class="text-xs md:text-sm font-medium">Those endless Dimag khaane wali talks, and we finally truly started knowing about each other. Now, I feel like I know your soul perfectly.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="text-[10px] text-rose-300/60 uppercase">The Realization</p>
+                <p class="text-xs md:text-sm font-medium">How strange it is that we started as hey hello only, yet now I can't imagine a day without you. I’ve found a best friend who is truly irreplaceable, and realized I never want to let that go. God please, don't create any circumstances (GOD Isko thodi buddhi dedo ) </p>
+            </div>
+            <div class="timeline-item">
+                <p class="text-[10px] text-rose-300/60 uppercase">Today • October 8</p>
+                <p class="text-xs md:text-sm font-medium">Celebrating the person who makes made me smile when there was nothing interesting goin on in my life. I'm so grateful for every second I get to spend with you.</p>
+            </div>
+            <button onclick="nextStage(3)" class="mt-4 w-full py-3 rounded-2xl bg-white/5 border border-white/10 text-rose-300 text-xs font-bold uppercase tracking-widest">Read my letter</button>
+        </div>
+    </div>
+
+    <div id="stage4" class="stage">
+        <div class="glass p-8 rounded-[40px] text-center stage-card">
+            <h2 class="font-romance text-4xl md:text-5xl text-rose-400 mb-6">My Dearest Nehaaaa,</h2>
+            <div class="text-rose-100/80 space-y-4 leading-relaxed italic text-base md:text-lg max-h-64 overflow-y-auto pr-2">
+                <p>"You ment so much to me. You are my peace, my favorite thought, and the person who makes this world feel like home."</p>
+                <p>"I don't know what the future holds, but I know I want to be there to make every single day as special as you are to me.( Jab tak shadi nahi hoti obv. alag alag😭 )"</p>
+                <p>"Every day I’ve spent with you has felt truly beautiful, like moments I’d quietly wish could last a little longer."</p>
+                <p>"I just hope the days ahead feel just as special… 
+                    waise pata hai, ye thoda rare hai kyunki Tera dimag jyada jaldi garam ho jata hai ( obv ghutno ka ilaaj kra )😂"</p>
+                <p>"And honestly… talking to you has always been my favorite comfort,
+                        so call me sometimes… I’d always love to hear your alien voice ❤️"</p>
+                <p>"Your silly, childish nonsense talks…
+                            made no sense, but made me the happiest.
+                            Still don’t know how you’re this cute and this annoying."</p>
+                 <p>"sorry for sending you annoying reels."</p>           
+                <p>"Or kabhi toh meri baate maan lia kr nahhh Alieeennn 😭😭"</p>
+            </div>
+            <button onclick="nextStage(4)" class="mt-8 w-full py-4 rounded-2xl bg-rose-600 font-bold uppercase text-xs tracking-widest">Final Secret ❤️</button>
+        </div>
+    </div>
+
+    <div id="stage5" class="stage text-center px-4">
+        <div class="relative">
+            <div class="absolute inset-0 blur-3xl bg-rose-500/20 rounded-full"></div>
+            <h1 class="font-romance text-6xl md:text-8xl text-rose-400 relative">Kade bhi phone kr liye laali baate badi badi maar dege, aayege nahii </h1><br>
+            <p class="text-white/40 text-[11px] mb-8 font-light italic animate-pulse">"kha liya kr kuch sukhi haddi❣❣❣🥰❣❣❣"</p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>`
+</html>

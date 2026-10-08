@@ -1,0 +1,82 @@
+body { margin: 0; background: #000; font-family: 'Quicksand', sans-serif; overflow: hidden; color: white; touch-action: none; }
+canvas { position: fixed; inset: 0; z-index: 0; }
+.font-romance { font-family: 'Great Vibes', cursive; }
+
+#password-modal {
+    position: fixed; inset: 0; background: #000; z-index: 300;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 1s ease; padding: 20px;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #fb7185;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#loader {
+    position: fixed; inset: 0; background: #000; z-index: 100;
+    display: none; flex-direction: column; align-items: center; justify-content: center;
+    transition: all 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+#progress {
+    width: 0%; /* Ensure it starts at zero */
+    height: 100%;
+    background-color: #e11d48; /* Your rose-600 color */
+    transition: width 15s linear; /* Explicitly tell it to animate the width */
+}
+
+.stage { display: none; opacity: 0; transform: scale(0.9); transition: all 1s ease; z-index: 10; width: 100%; max-width: 450px; position: relative; }
+.stage.active { display: flex; opacity: 1; transform: scale(1); flex-direction: column; align-items: center; }
+
+.glass { 
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(25px) saturate(160%); 
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 40px;
+    width: 100%;
+}
+
+.heart {
+    position: absolute; pointer-events: none;
+    text-shadow: 0 0 15px rgba(251, 113, 133, 0.8);
+    animation: floatUp 5s linear forwards;
+    z-index: 20;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
+
+.glow-btn { box-shadow: 0 0 20px rgba(225, 29, 72, 0.4); animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+.timeline-item { position: relative; padding-left: 20px; border-left: 1px solid rgba(251, 113, 133, 0.3); margin-bottom: 20px; text-align: left; }
+.timeline-item::before { 
+    content: ''; position: absolute; left: -5px; top: 5px; width: 9px; height: 9px; 
+    background: #fb7185; border-radius: 50%; 
+    box-shadow: 0 0 10px rgba(251, 113, 133, 1);
+}
+
+input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(251, 113, 133, 0.3);
+    outline: none; color: #fb7185; transition: all 0.3s;
+    -webkit-appearance: none;
+}
+input:focus { border-color: #fb7185; background: rgba(255, 255, 255, 0.08); }
+
+#loading-text { transition: opacity 0.5s ease; }
+
+@media (max-height: 700px) {
+    .font-romance { font-size: 3.5rem !important; }
+    .timeline-item { margin-bottom: 10px; }
+    .stage-card { padding: 1.5rem !important; }
+}
